@@ -20,7 +20,7 @@ public class MyController {
 	@GetMapping("/devices/{deviceId}")
 	// >>> Breaking changes
 	//public ResponseEntity<DeviceResource> createDevice(@PathVariable long deviceId) {
-	public ResponseEntity<DeviceResource> createDevice(@PathVariable String deviceId) {
+	public ResponseEntity<DeviceResource> getDevice(@PathVariable String deviceId) {
 		var deviceResource = new DeviceResource();
 		deviceResource.id = deviceId;
 		deviceResource.tenant = "tenant";
