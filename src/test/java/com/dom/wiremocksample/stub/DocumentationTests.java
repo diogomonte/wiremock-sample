@@ -53,7 +53,7 @@ public class DocumentationTests {
 		// Test is documented
 		String deviceId = UUID.randomUUID().toString();
 
-		// >>> Breaking change on the devices API
+		// >>> Breaking changes
 		//long deviceId = 10L;
 		String getUrl = "/devices/" + deviceId;
 		ExtractableResponse response = RestAssured.given()
@@ -65,6 +65,7 @@ public class DocumentationTests {
 
 		DeviceResource resource = response.body().as(DeviceResource.class);
 		assert deviceId.equals(resource.id);
+		// >>> Breaking changes
 		//assert deviceId == resource.id;
 		assert "tenant".equals(resource.tenant);
 
